@@ -1,0 +1,123 @@
+@import "./config";
+
+.content {
+  .teaser {
+    width: 100vw;
+  }
+  .teaser-small {
+    @include flex(row, center, center);
+    width: 336px;
+    padding: 20px 0px 34px 0;
+    margin: 0 20px 14px 20px;
+    border-bottom: 1px solid $grey;
+
+    .teaser-image-container {
+      @include flex(column, center, center);
+      width: 167px;
+      height: 263px;
+      overflow: hidden;
+      .teaser-image {
+        height: 263px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+    .teaser-content {
+      max-width: 150px;
+      margin-left: 19px;
+      @include flex(column, space-between, center);
+
+      .teaser-theme {
+        color: $white;
+        background-color: $blue;
+        text-align: center;
+        padding: 3px 8px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 22px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 15px;
+      }
+      .teaser-title {
+        font-weight: 400;
+        font-size: 28px;
+        letter-spacing: -0.22px;
+        line-height: 32px;
+        margin-bottom: 12px;
+      }
+      .teaser-text {
+        text-align: center;
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 24px;
+      }
+      .teaser-writer {
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        line-height: 15px;
+        text-align: center;
+      }
+      .teaser-sound {
+        @include flex(column, center, center);
+        .teaser-image {
+          width: 28px;
+          margin-bottom: 16px;
+        }
+      }
+    }
+    
+    
+  }
+  .teaser-large {
+    @include flex(column, flex-start, center);
+    padding-bottom: 10px;
+    border-bottom: 1px solid $grey;
+    padding: 20px 0px 34px 0;
+    margin: 0 20px 14px 20px;
+    .teaser-image {
+      width: calc(100vw - 40px);
+      margin-bottom: 28px;
+    }
+    .teaser-theme {
+      color: $blue;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.93px;
+      line-height: 15px;
+      margin-bottom: 12px;
+    }
+    .teaser-title {
+      font-weight: 400;
+      margin-bottom: 8px;
+      font-size: 36px;
+      letter-spacing: -0.28px;
+      line-height: 52px;
+    }
+    .teaser-content {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 23px;
+    }
+    .teaser-sound {
+      @include flex(column, center, center);
+      img {
+        width: 30px;
+        margin-bottom: 16px;
+      }
+      p {
+        color: $black;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        line-height: 15px;
+      }
+    }
+  }
+}

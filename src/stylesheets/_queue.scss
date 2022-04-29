@@ -1,0 +1,180 @@
+@import "./config";
+
+.queue {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: $white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  margin-bottom: calc(4px + 26px + 48px);
+  .queue-heading {
+    @include flex(row, space-between, center);
+    padding: 20px;
+    border-bottom: 1px solid $grey;
+    .queue-heading-title {
+      @include flex(row, space-between, center);
+      .queue-heading-title-icon {
+        margin-right: 16px;
+        width: 20px;
+      }
+      p {
+        font-weight: 700;
+        font-size: 18px;
+      }
+    }
+    .queue-close-icon {
+      width: 16px;
+    }
+  }
+  .queue-edit {
+    @include flex(row, space-between, flex-end);
+    padding: 20px;
+    border-bottom: 1px solid $grey;
+    .hide-edit {
+      opacity: 0;
+    }
+    .queue-edit-action {
+      @include flex(row, flex-start, center);
+      .queue-edit-icon {
+        margin-right: 12px;
+      }
+    }
+  }
+  .queue-list {
+    margin: 20px;
+    h2 {
+      margin: 20px 0;
+      font-family: "WEA Sans";
+      font-weight: 700;
+    }
+    .queue-item {
+      padding-bottom: 16px;
+      padding-top: 16px;
+      border-bottom: 1px solid $grey;
+      .current-info {
+        @include flex(row, flex-start, center);
+        .current-icon {
+          width: 20px;
+          margin-right: 25px;
+        }
+        .current-info-about {
+          .current-theme {
+            font-size: 13px;
+            padding-top: 10px;
+            padding-bottom: 15px;
+          }
+          .current-title {
+            font-weight: 700;
+            font-size: 18px;
+          }
+          .current-reading {
+            font-size: 13px;
+          }
+          .current-details {
+            @include flex(row, flex-start, center);
+            .current-detail {
+              font-size: 11px;
+            }
+            .current-divider {
+              height: 10px;
+              background-color: $grey;
+              width: 1px;
+              margin: 0 10px;
+            }
+          }
+        }
+      }
+      .current-progress {
+        height: 2px;
+        width: calc(100vw - 40px);
+        background-color: $blue;
+        opacity: 50%;
+        margin-top: 20px;
+      }
+      .edit-queue {
+        @include flex(row, flex-start, center);
+        .remove-icon {
+          height: 20px;
+          margin-right: 25px;
+        }
+        .change-order {
+          position: absolute;
+          right: 20px;
+          width: 80vw;
+          height: 90px;
+          background: $white;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 1)
+          );
+          @include flex(row, flex-end, center);
+          .change-icon {
+            width: 20px;
+            background: $white;
+            background: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0),
+              rgba(255, 255, 255, 1)
+            );
+            padding: 35px 0 35px 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.queue-toaster {
+  background-color: $white;
+  @include flex(row, flex-start, center);
+  width: calc(359px - 48px);
+  padding: 14px 24px;
+  border-radius: 2px;
+  box-shadow: 0 6px 14px -4px rgba(black, 0.3);
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  z-index: 10;
+
+  .toaster-illustration {
+    margin-right: 24px;
+    width: 50px;
+  }
+  p {
+    font-weight: 450;
+    font-size: 17px;
+    line-height: 18px;
+  }
+  .toaster-close {
+    @include flex(row, space-between, center);
+    width: 241px;
+    .toaster-close-icon {
+      width: 12px;
+    }
+  }
+  .toaster-content-cta {
+    margin-top: 8px;
+    @include flex(row, flex-start, center);
+    p {
+      color: $blue;
+      font-weight: 400;
+      font-size: 15px;
+    }
+    .divider {
+      color: $grey;
+      margin-left: 8px;
+      margin-right: 8px;
+      font-size: 15px;
+    }
+  }
+}
+
+.move-toaster {
+  bottom: calc(77px + 8px);
+}

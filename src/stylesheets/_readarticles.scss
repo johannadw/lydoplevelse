@@ -1,0 +1,59 @@
+@import "./config";
+
+.read-articles {
+  margin-left: 20px;
+  margin-right: 20px;
+  .heading {
+    @include flex(column, space-between, center);
+    border-bottom: 1px solid $grey;
+    .heading-img {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+    .heading-title {
+      margin-bottom: 50px;
+      text-transform: uppercase;
+    }
+  }
+  .theme-name {
+    padding: 20px 0;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 32px;
+    border-bottom: 1px solid $grey;
+  }
+  .read-articles-list-item {
+    @include flex(row, flex-start, center);
+    padding: 20px 0;
+    border-bottom: 1px solid $grey;
+
+    .item-icons {
+      @include flex(column, space-between, center);
+      margin-left: 20px;
+      margin-right: 20px;
+      .item-icon {
+        width: 23px;
+        &:first-of-type {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .article-info {
+      @include flex(column, flex-start, flex-start);
+      .article-title {
+        margin-bottom: 10px;
+      }
+      .article-content {
+        margin-bottom: 10px;
+      }
+      .article-writer {
+        color: $grey;
+        .article-writer-bold {
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

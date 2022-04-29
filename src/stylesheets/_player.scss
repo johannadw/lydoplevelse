@@ -1,0 +1,306 @@
+@import "./config";
+
+.player {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  width: 100vw;
+  .mini-player {
+    
+    .mini-player-progress {
+      @include flex(row, flex-start,flex-start);
+      .mini-player-progress-done {
+        width: 30vw;
+        height: 4px;
+        background-color: $blue;  
+      }
+      .mini-player-progress-todo {
+        width: 70vw;
+        height: 4px;
+        background-color: $grey;
+      }
+    }
+    .mini {
+      background-color: $black;
+      @include flex(row, space-between, center);
+      box-shadow: 0 0 16px 0 $grey;
+      padding: 13px 20px;
+      .mini-player-left {
+        height: calc(70px - 26px);
+        @include flex(row, flex-start, center);
+        .mini-player-content {
+          height: 44px;
+          @include flex(row, flex-start, center);
+        }
+        p {
+          color: $white;
+          width: calc(100vw - 44px - 40px - 16px - 20px);
+        }
+      }
+      .icon {
+        width: 16px;
+      }
+      .close-icon {
+        margin-right: 20px;
+      }
+      .pause-icon-circle img {
+        width: 44px;
+      }
+      .play-icon-circle img {
+        width: 44px;
+      }
+    }
+  }
+
+  .maxi-player {
+    .maxi-player-top {
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 100vh;
+      @include flex(column, flex-start, center);
+      background-color: $white;
+      .background-image {
+        position: absolute;
+        min-height: 320px;
+        max-height: 320px;
+        // width: 100vw;
+        overflow: hidden;
+        @include flex(column, center, center);
+        img {
+          height: 320px;
+        }
+      }
+      .player-header {
+        z-index: 10;
+        @include flex(row, space-between, center);
+        // width: calc(100vw - 48px);
+        width: 100vw;
+        padding-top: 40px;
+        padding-bottom: 80px;
+        padding-right: 48px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(34, 34, 34, 1) 350%
+        );
+        .close-player-icon {
+          width: 20px;
+        }
+        .hidden-icon {
+          opacity: 0;
+          width: 20px;
+          padding-left: 48px;
+        }
+        .player-type {
+          text-transform: uppercase;
+          font-weight: 700;
+          color: $grey;
+          font-size: 12px;
+          letter-spacing: 0.6px;
+        }
+      }
+    }
+    .maxi-player-bottom {
+      background-color: $black;
+      padding: 28px 16px;
+      position: absolute;
+      width: calc(100vw - 30px);
+      height: calc(100vh - 320px - 28px - 28px);
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+      @include flex(column, space-between, center);
+
+      .player-info {
+        padding: 0 32px;
+        @include flex(column, center, center);
+        height: calc(100vh - 320px - 28px - 206px);
+
+        .info-detail {
+          color: $blue;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 2px;
+          font-size: 12px;
+          line-height: 15px;
+          text-align: center;
+        }
+        .info-title {
+          font-weight: 450;
+          font-size: 32px;
+          line-height: 34px;
+          letter-spacing: 2px;
+          color: $white;
+          margin-top: 16px;
+          text-align: center;
+        }
+        .info-date {
+          color: $grey;
+          text-transform: uppercase;
+          font-weight: 450;
+          font-size: 12px;
+          letter-spacing: 0.6px;
+          text-align: center;
+          margin-top: 16px;
+        }
+      }
+      .player-audio {
+        @include flex(column, space-between, center);
+        .progress {
+          @include flex(row, space-between, center);
+          // margin-top: 35px;
+          .played {
+            color: $blue;
+          }
+          .time-left {
+            color: $grey;
+          }
+          .progress-bar {
+            height: 4px;
+            width: 265px;
+            background-color: $grey;
+            border-radius: 2px;
+            margin: 0px 8px;
+            .progress-bar-btn {
+              width: 16px;
+              height: 16px;
+              background-color: $blue;
+              border-radius: 100%;
+              margin-top: -6.5px;
+            }
+          }
+        }
+        .player-toggles {
+          @include flex(row, space-between, center);
+          width: calc(100vw - 80px);
+          margin-top: 36px;
+          .toggle-icon {
+            width: 20px;
+          }
+          .play-icon-circle img {
+            width: 70px;
+          }
+          .pause-icon-circle img {
+            width: 70px;
+          }
+        }
+        .player-settings {
+          @include flex(row, space-between, center);
+          margin-top: 47px;
+          width: calc(100vw - 56px);
+
+          .timing {
+            color: $white;
+          }
+        }
+      }
+    }
+    .player-speed {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+      z-index: 15;
+
+      .player-speed-top {
+        height: 281px;
+        width: 100vw;
+        background-color: $blue;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .player-speed-bottom {
+        height: 536px;
+        width: calc(100vw - 56px);
+        background-color: $black;
+        padding: 28px;
+
+        .player-speed-heading {
+          @include flex(row, space-between, flex-start);
+          // margin-top: 28px;
+          .hide-icon {
+            opacity: 0;
+          }
+          .player-speed-title {
+            color: $white;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 0.6px;
+          }
+
+          .close-player-icon {
+            width: 20px;
+          }
+        }
+        .player-speeds {
+          @include flex(column, space-between, center);
+          // height: calc(100vh - 348px);
+
+          .speeds {
+            margin-top: 40px;
+            // text-align: right;
+            .speed-item {
+              @include flex(row, flex-end, baseline);
+              margin-top: 32px;
+              cursor: pointer;
+
+              img {
+                width: 16px;
+                margin-right: 16px;
+              }
+
+              .speed {
+                text-align: right;
+                color: $white;
+                font-size: 20px;
+                letter-spacing: 0.5px;
+                font-weight: 400;
+              }
+              &:first-child {
+                margin-top: 0;
+              }
+              .selected-speed {
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+    .speaker-toaster {
+      position: absolute;
+      z-index: 50;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      // margin: 40vh auto;
+      @include flex(column, center, center);
+      margin-top: -10vh;
+      background: $black;
+      background-color: rgba($color: $black, $alpha: 0.8);
+
+      .speaker-container {
+        background-color: $white;
+        border-radius: 4px;
+        color: $black;
+        width: 70vw;
+        height: 25vh;
+        // padding: ;
+        @include flex(column, center, center);
+        p {
+          text-align: center;
+          width: 60vw;
+        }
+        .back {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

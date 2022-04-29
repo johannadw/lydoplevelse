@@ -1,0 +1,24 @@
+@import "./config";
+
+.toaster-queue-enter {
+    opacity: 0;
+    right: -400px;
+}
+.toaster-queue-enter-active {
+    opacity: 1;
+    right: 0;
+    transition: all 500ms;
+}
+.toaster-queue-exit {
+    opacity: 1;
+}
+.toaster-queue-exit-active {
+    opacity: 0;
+    transition: all 500ms;
+}
+.toaster-queue-enter-done {
+    opacity: 1;
+  }
+  .toaster-queue-exit-done {
+    opacity: 0;
+  }

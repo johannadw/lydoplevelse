@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bi:play-fill</title>
+    <g id="🔹-S-/-Lytteoplevelse" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mobile-" transform="translate(-310.000000, -754.000000)">
+            <g id="Group" transform="translate(0.000000, 742.000000)">
+                <g id="Group-3" transform="translate(311.000000, 13.000000)">
+                    <g id="Group-2"></g>
+                    <circle id="Oval" fill="#41A8E2" cx="22" cy="22" r="22"></circle>
+                    <polygon id="Path" fill="#FFFFFF" fill-rule="nonzero" points="18 14 31 22 18 30"></polygon>
+                    <circle id="Oval" stroke="#41A8E2" stroke-width="3" cx="22" cy="22" r="20.5"></circle>
+                    <path d="M21.9282885,42.4574667 C33.2501258,42.4574667 42.4282885,33.2793041 42.4282885,21.9574667 C42.4282885,10.6356294 33.2501258,1.45746674 21.9282885,1.45746674 C10.6064511,1.45746674 1.42828847,10.6356294 1.42828847,21.9574667" id="Oval" stroke="#41A8E2" stroke-width="3" transform="translate(21.928288, 21.957467) rotate(88.000000) translate(-21.928288, -21.957467) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

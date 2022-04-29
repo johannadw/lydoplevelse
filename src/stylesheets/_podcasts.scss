@@ -1,0 +1,98 @@
+@import "./config";
+.podcasts {
+  margin: 50px 20px;
+  @include flex(column, flex-start, center);
+  .podcasts-heading {
+    margin-bottom: 30px;
+  }
+  .podcast-image {
+    width: calc(100vw - 40px);
+    padding-bottom: 20px;
+    border-bottom: 1px solid $grey;
+  }
+  .podcast-about {
+    text-align: center;
+    margin: 20px 0;
+    .podcast-theme {
+      font-weight: 700;
+    }
+  }
+  .podcast-name {
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid $grey;
+  }
+}
+
+.podcast-list {
+  margin: 20px;
+  .podcast-name {
+    font-weight: 400;
+    margin: 50px 0 20px 0;
+  }
+  .podcast-list-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $grey;
+    margin-bottom: 16px;
+  }
+  .podcast-follow {
+    margin-bottom: 50px;
+    img {
+      border: 2px solid $grey;
+    }
+  }
+  .podcast-details {
+    @include flex(row, flex-start, flex-start);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    .podcast-image {
+      width: 100px;
+      margin-right: 10px;
+    }
+    .podcast-about {
+      text-align: center;
+      .podcast-theme {
+        font-weight: 700;
+      }
+    }
+  }
+  .podcast-list-queue {
+    .podcast-list-item {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $grey;
+      .item-info {
+        @include flex(row, flex-start, center);
+        .item-toggles {
+          @include flex(column, space-between, flex-start);
+          .item-icon {
+            width: 24px;
+            max-height: 24px;
+            margin-right: 25px;
+            &:first-of-type {
+              margin-bottom: 20px;
+            }
+          }
+        }
+        .item-info-about {
+          .item-title {
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+          .item-details {
+            @include flex(row, flex-start, center);
+            .item-divider {
+              height: 10px;
+              background-color: $grey;
+              width: 1px;
+              margin: 0 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

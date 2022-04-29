@@ -1,0 +1,66 @@
+@import "./config";
+
+.article {
+  margin: 40px 20px;
+  .article-intro {
+    text-align: center;
+    margin-bottom: 30px;
+    .article-theme {
+      font-weight: 700;
+    }
+  }
+  .article-image {
+    width: calc(100vw - 40px);
+    margin-bottom: 30px;
+  }
+  .article-title {
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .article-writer {
+    @include flex(column, center, center);
+    .article-writer-icon {
+      height: 22px;
+      margin-bottom: 16px;
+    }
+    .article-writer-name {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+  }
+  .listen-toggles {
+    @include flex(row, space-between, center);
+    margin-bottom: 30px;
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid $grey;
+
+    .icon-listen-queue {
+      height: 17px;
+    }
+    .divider {
+      height: 21px;
+      width: 1px;
+      background-color: $grey;
+      margin: 0 20px;
+    }
+    .listen-toggle {
+      @include flex(row, flex-start, center);
+      .listen-toggle-icon {
+        height: 20px;
+        margin-right: 12px;
+      }
+      .listen-toggle-label {
+        color: $black;
+        font-weight: 450;
+      }
+    }
+  }
+  .article-text {
+    font-family: "WEA Tekst";
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    line-height: 30px;
+  }
+}
