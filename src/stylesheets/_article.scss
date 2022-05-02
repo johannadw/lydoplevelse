@@ -33,7 +33,7 @@
   .listen-toggles {
     @include flex(row, space-between, center);
     margin-bottom: 30px;
-    padding: 0 20px 20px 20px;
+    padding: 0 15px 20px 15px;
     border-bottom: 1px solid $grey;
 
     .icon-listen-queue {

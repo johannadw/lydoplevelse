@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Edit list</title>
+    <g id="Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Queue" transform="translate(-271.000000, -70.000000)">
+            <g id="Group" transform="translate(266.000000, 66.000000)">
+                <rect id="ViewBox" x="0" y="0" width="15" height="15"></rect>
+                <polyline id="Path-4" stroke="#333333" stroke-linejoin="round" points="12 7.5 6 7.5 6 19 17.6294555 19 17.6294555 13.25"></polyline>
+                <polygon id="Path-5" stroke="#333333" stroke-linejoin="round" points="17.6294555 5.24191805 10.3368497 12.5 9.87648518 15.1235148 12.5 14.4350585 19.6034662 7.5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

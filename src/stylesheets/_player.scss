@@ -55,6 +55,8 @@
   .maxi-player {
     .maxi-player-top {
       padding-left: 20px;
+      top: 0;
+      left: 0;
       padding-right: 20px;
       height: 100vh;
       @include flex(column, flex-start, center);

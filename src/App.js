@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import ScrollToTop from './components/scrollToTop';
 import Player from './components/Player/Player';
 import QueueToaster from './components/Player/QueueToaster';
 import Home from "./components/Home"
@@ -553,6 +552,7 @@ function App() {
       if(queueItem.id == item.id) {
         return true
       }
+      return ""
     } )
     return isInQueue
   }
@@ -566,59 +566,56 @@ function App() {
         ? <audio  id="audio"  
                   src={ currentlyPlaying[0].src }   
                   controls={false}   
-                  preload="metadata"   
+                  preload="auto"   
                   muted={false}   
                   autoPlay={true}  onEnded={ () => playNext() } ></audio>  : '' }
-      {/* <Router> */}
-        <ScrollToTop>
-        <Routes>
-          <Route path="/" element={ <Home articles={ articles } /> } />
-          <Route path="/article/:id" element={ 
-                  <Article  articles={ articles } 
-                            onShowPlayer={ () => setShowPlayer(true) } 
-                            onShowToaster={ () => setShowToaster(true) }
-                            queue={ queue } 
-                            onPlay={ onPlay }
-                            addToQueue={ addToQueue }
-                            checkInQueue={ checkInQueue } /> } />
-          <Route path="oplaeste-artikler" element={ 
-                  <ReadArticles articles={ articles } 
-                                onShowPlayer={ () => setShowPlayer(true) } 
-                                onShowToaster={ () => setShowToaster(true) }
-                                addToQueue={ addToQueue }
-                                queue={ queue } 
-                                onPlay={ onPlay }
-                                checkInQueue={ checkInQueue } /> } />
-          <Route path="podcasts" element={ 
-                  <Podcasts podcasts={ podcasts } 
-                            queue={ queue } /> } />
-          <Route path="podcasts/:id" element={ 
-                  <PodcastList  podcasts={ podcasts } 
-                                onShowPlayer={ () => setShowPlayer(true) }
-                                onShowToaster={ () => setShowToaster(true) }
-                                addToQueue={ addToQueue }
-                                queue={ queue }
-                                onPlay={ onPlay }
-                                checkInQueue={ checkInQueue } /> } />
-          <Route path="ko" element={ 
-                  <Queue  currentlyPlaying={ currentlyPlaying[0] } 
-                          isPlaying={ isPlaying } 
-                          setIsPlaying={ setIsPlaying } 
-                          removeFromQueue={ removeFromQueue }
-                          resetQueue={ resetQueue }
-                          queue={ queue }
-                          playFromQueue={ playFromQueue }
-                          setQueue={ setQueue } /> } />
-        </Routes>
-        </ScrollToTop>
-      {/* </Router> */}
 
-      
+          <Routes>
+            <Route path="/" element={ <Home articles={ articles } /> } />
+            <Route path="/article/:id" element={ 
+                    <Article  articles={ articles } 
+                              onShowPlayer={ () => setShowPlayer(true) } 
+                              onShowToaster={ () => setShowToaster(true) }
+                              queue={ queue } 
+                              onPlay={ onPlay }
+                              addToQueue={ addToQueue }
+                              checkInQueue={ checkInQueue } /> } />
+            <Route path="oplaeste-artikler" element={ 
+                    <ReadArticles articles={ articles } 
+                                  onShowPlayer={ () => setShowPlayer(true) } 
+                                  onShowToaster={ () => setShowToaster(true) }
+                                  addToQueue={ addToQueue }
+                                  queue={ queue } 
+                                  onPlay={ onPlay }
+                                  checkInQueue={ checkInQueue } /> } />
+            <Route path="podcasts" element={ 
+                    <Podcasts podcasts={ podcasts } 
+                              queue={ queue } /> } />
+            <Route path="podcasts/:id" element={ 
+                    <PodcastList  podcasts={ podcasts } 
+                                  onShowPlayer={ () => setShowPlayer(true) }
+                                  onShowToaster={ () => setShowToaster(true) }
+                                  addToQueue={ addToQueue }
+                                  queue={ queue }
+                                  onPlay={ onPlay }
+                                  checkInQueue={ checkInQueue } /> } />
+            <Route path="ko" element={ 
+                    <Queue  currentlyPlaying={ currentlyPlaying[0] } 
+                            isPlaying={ isPlaying } 
+                            setIsPlaying={ setIsPlaying } 
+                            removeFromQueue={ removeFromQueue }
+                            resetQueue={ resetQueue }
+                            queue={ queue }
+                            playFromQueue={ playFromQueue }
+                            setQueue={ setQueue } /> } />
+          </Routes>
+
       { showToaster && 
         <CSSTransition in={ showToaster } timeout={500} classNames="toaster-queue" >
           <QueueToaster onShowToaster={ () => setShowToaster(false) } showPlayer={ showPlayer } />
         </CSSTransition>
       }
+
       { showPlayer && !navigation && !profileNav 
           ? <CSSTransition in={ showPlayer } timeout={200} classNames="toaster-player" >
             <Player isPlaying={ isPlaying } 
@@ -635,7 +632,6 @@ function App() {
                     pauseAudio={pauseAudio}
                     currentSpeed={ currentSpeed[0] } /> 
           </CSSTransition>
-
         : "" }
     </div>
   )

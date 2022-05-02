@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Navigation = ({ onToggleNavigation }) => {
   return (
     <div className="navigation">
-        <div className="navigation-side"></div>
+        <div className="navigation-side" onClick={ onToggleNavigation } ></div>
         <div className="navigation-content">
             <div className="nav-links">
                 <h1><Link to="/" onClick={ onToggleNavigation }>Samfund</Link></h1>

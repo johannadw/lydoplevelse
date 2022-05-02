@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const ProfileNav = ({ onToggleProfileNav }) => {
   return (
     <div className="navigation">
-        <div className="navigation-side"></div>
+        <div className="navigation-side"  onClick={ onToggleProfileNav } ></div>
         <div className="navigation-content">
             <div className="nav-links">
                 <p className="nav-welcome">Velkommen Jesper Dalsten</p>
