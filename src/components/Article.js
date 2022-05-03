@@ -26,7 +26,7 @@ const Article = ({ articles, onPlay, addToQueue, checkInQueue }) => {
                   <p className="listen-toggle-label">{ article[0].duration }.</p>
               </div>
             </div>
-          : ''
+          : <div className="article-divider"></div>
         }
         <p className="article-text">
         { article[0].content } 

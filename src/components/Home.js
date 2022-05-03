@@ -17,7 +17,9 @@ const Home = ({ articles, onPlay }) => {
                                   { article.type == "oplæst artikel" ? <img src={ require("../assets/icons/read_article_blue.svg").default } alt="" className='teaser-image' /> : "" }
                                   <p className="teaser-writer">{ article.writer }</p>
                               </div>
-                              : <p className="teaser-writer">{ article.writer }</p>
+                              : <div className="teaser-sound">
+                                    <p className="teaser-writer">{ article.writer }</p>
+                                </div>
                             }
                         </div>
                       </Link> )

@@ -1,10 +1,21 @@
 @import "./config";
 
-.header {
+header {
+
+  &.menu-open {
+    @include flex(column, flex-end, flex-end);
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+    height: 120%;
+    position: fixed;
+    top: 0;
+  }
+
   .header-top {
     @include flex(row, space-between, center);
     padding: 16px 20px;
     border-bottom: 1px solid $grey;
+    
     .logo {
       height: 24px;
     }
@@ -30,19 +41,21 @@
   .header-fixed {
     position: fixed;
     background-color: $white;
+    height: 47.5px;
     top: 0;
     left: 0;
     right: 0;
   }
   .navigation {
-
-    height: calc(100vh - 32px - 43.5px);
+    // height: calc(100vh - 32px - 43.5px);
+    min-height: 120vh;
     width: 100vw;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    overflow-y: hidden;
+    overflow: hidden;
     position: fixed;
-    bottom: 0;
+    top: 80.5px;
+    left: 0;
     z-index: 100;
     .navigation-side {
       background-color: rgba($blue, 0.1);
@@ -59,10 +72,10 @@
       height: calc(100vh - 32px - 48.5px);
       @include flex(column, flex-start, flex-start);
       padding: 24px 12px;
-      .logout {
-        position: absolute;
-        bottom: 50px;
-      }
+      // .logout {
+      //   position: absolute;
+      //   bottom: 50px;
+      // }
       .nav-links {
         @include flex(column, flex-start, flex-start);
         margin-left: 12px;
