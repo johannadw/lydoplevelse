@@ -22,6 +22,12 @@ $darkgrey: #a5a5a5;
   margin: 0;
   padding: 0;
 }
+#root {
+  max-width: 375px;
+  max-height: 812px;
+  border: 1px solid $black;
+  overflow: scroll;
+}
 a {
   text-decoration: none;
   color: $black;

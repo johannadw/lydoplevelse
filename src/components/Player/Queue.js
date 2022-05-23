@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { DndProvider } from 'react-dnd';
-import { TouchBackend } from 'react-dnd-touch-backend'
+// import { DndProvider } from 'react-dnd';
+// import { TouchBackend } from 'react-dnd-touch-backend'
 // import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useNavigate } from 'react-router';
 import QueueCurrent from './QueueCurrent';
@@ -48,9 +48,9 @@ const Queue = ({ queue, currentlyPlaying, isPlaying, setIsPlaying, removeFromQue
                     </div>
                 : <div>
                     <h2>Næste i lyttekøen</h2>
-                    <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
+                    {/* <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}> */}
                         <QueueList queue={ queue } editQueue={ editQueue } removeFromQueue={ removeFromQueue } playFromQueue={ playFromQueue } setQueue={ setQueue } />
-                    </DndProvider>
+                    {/* </DndProvider> */}
                     {/* <DndProvider backend={HTML5Backend}>
                         <QueueList queue={ queue } editQueue={ editQueue } removeFromQueue={ removeFromQueue } playFromQueue={ playFromQueue } setQueue={ setQueue } />
                     </DndProvider> */}

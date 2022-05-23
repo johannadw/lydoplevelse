@@ -2,7 +2,7 @@
 
 .content {
   .teaser {
-    width: 100vw;
+    width: 100%;
   }
   .teaser-small {
     @include flex(row, center, center);
@@ -79,7 +79,7 @@
     padding: 20px 0px 34px 0;
     margin: 0 20px 14px 20px;
     .teaser-image {
-      width: calc(100vw - 40px);
+      width: calc(375px - 40px);
       margin-bottom: 28px;
     }
     .teaser-theme {

@@ -1,50 +1,19 @@
-import { useRef } from "react"
-import { useDrag, useDrop } from "react-dnd"
+// import { useRef } from "react"
+import { useState } from "react"
+// import { useDrag, useDrop } from "react-dnd"
 import { Link } from "react-router-dom"
+import ChangeQueueToaster from "./ChangeQueueToaster"
 
 
-const QueueListItem = ({ queueItem, editQueue, removeFromQueue, playFromQueue, index, moveQueueListItem }) => {
 
-  // useDrag - the list item is draggable
-  const [{ isDragging }, dragRef] = useDrag({
-    type: 'item',
-    item: { index },
-    collect: ( monitor ) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  })
-
-  // useDrop - the list item is a drop area
-  const [spec, dropRef] = useDrop({
-    accept: 'item',
-    hover: (item, monitor) => {
-      const dragIndex = item.index
-      const hoverIndex = index
-      const hoverBoundingRect = ref.current?.getBoundingClientRect()
-      const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
-      const hoverActualY = monitor.getClientOffset().y - hoverBoundingRect.top
-      
-      // if dragging down, continue only when hover is smaller than middle Y
-      if ( dragIndex < hoverIndex && hoverActualY < hoverMiddleY ) return
-      // if dragging up, continue only when hover is bigger than middle Y
-      if ( dragIndex > hoverIndex && hoverActualY > hoverMiddleY ) return
-      
-      moveQueueListItem(dragIndex, hoverIndex)
-      item.index = hoverIndex
-    }
-  })
-
-  // Join 2 refs together into 1
-  const ref = useRef(null)
-  const dragDropRef = dragRef(dropRef(ref))
-
-  // Make items being dragged transparent
-  const opacity = isDragging ? 0.2 : 1
+const QueueListItem = ({ queueItem, editQueue, removeFromQueue, playFromQueue, index }) => {
+  let [showChangeQueueToaster, setShowChangeQueueToaster] = useState( false )
 
   return (
     <>
     { editQueue 
-      ? <div className="queue-item" style={{ opacity }}    >
+      ? <div className="queue-item" >
+      {/* ? <div className="queue-item" style={{ opacity }} > */}
           <div className={`current-info ${ editQueue ? 'edit-queue' : '' }`}>
             <img src={ require("../../assets/icons/close_black.svg").default } alt="" className="remove-icon" onClick={ () => ( removeFromQueue(queueItem) )} />
             <div className="current-info-about" onClick={ () => ( editQueue ? '' : playFromQueue( queueItem ) ) } >
@@ -66,8 +35,9 @@ const QueueListItem = ({ queueItem, editQueue, removeFromQueue, playFromQueue, i
                     <p className="current-detail">{ queueItem.date }</p>
                   </div> }
             </div>
-            <div className="change-order">
-              <img src={ require("../../assets/icons/change_order.svg").default } alt="" className="change-icon" ref={ dragDropRef }/>
+            <div className="change-order" onClick={ () => setShowChangeQueueToaster(true)}>
+              <img src={ require("../../assets/icons/change_order.svg").default } alt="" className="change-icon" />
+              {/* <img src={ require("../../assets/icons/change_order.svg").default } alt="" className="change-icon" ref={ dragDropRef }/> */}
             </div>
           </div>
         </div>
@@ -98,8 +68,45 @@ const QueueListItem = ({ queueItem, editQueue, removeFromQueue, playFromQueue, i
           </div>
         </div>
     }
+    { showChangeQueueToaster ? <ChangeQueueToaster setShowChangeQueueToaster={ setShowChangeQueueToaster } /> : '' }
     </>
   )
 }
 
 export default QueueListItem
+
+ // // useDrag - the list item is draggable
+  // const [{ isDragging }, dragRef] = useDrag({
+  //   type: 'item',
+  //   item: { index },
+  //   collect: ( monitor ) => ({
+  //     isDragging: monitor.isDragging(),
+  //   }),
+  // })
+
+  // // useDrop - the list item is a drop area
+  // const [spec, dropRef] = useDrop({
+  //   accept: 'item',
+  //   hover: (item, monitor) => {
+  //     const dragIndex = item.index
+  //     const hoverIndex = index
+  //     const hoverBoundingRect = ref.current?.getBoundingClientRect()
+  //     const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
+  //     const hoverActualY = monitor.getClientOffset().y - hoverBoundingRect.top
+      
+  //     // if dragging down, continue only when hover is smaller than middle Y
+  //     if ( dragIndex < hoverIndex && hoverActualY < hoverMiddleY ) return
+  //     // if dragging up, continue only when hover is bigger than middle Y
+  //     if ( dragIndex > hoverIndex && hoverActualY > hoverMiddleY ) return
+      
+  //     moveQueueListItem(dragIndex, hoverIndex)
+  //     item.index = hoverIndex
+  //   }
+  // })
+
+  // // Join 2 refs together into 1
+  // const ref = useRef(null)
+  // const dragDropRef = dragRef(dropRef(ref))
+
+  // // Make items being dragged transparent
+  // const opacity = isDragging ? 0.2 : 1

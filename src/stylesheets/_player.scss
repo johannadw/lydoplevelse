@@ -2,20 +2,23 @@
 
 .player {
   position: fixed;
-  bottom: 0;
+  // bottom: 0;
+  top: 0;
   z-index: 5;
-  width: 100vw;
+  width: 375px;
   .mini-player {
+  position: fixed;
+    top: calc(812px - 77.38px);
     
     .mini-player-progress {
       @include flex(row, flex-start,flex-start);
       .mini-player-progress-done {
-        width: 30vw;
+        width: 100px;
         height: 4px;
         background-color: $blue;  
       }
       .mini-player-progress-todo {
-        width: 70vw;
+        width: 275px;
         height: 4px;
         background-color: $grey;
       }
@@ -34,7 +37,7 @@
         }
         p {
           color: $white;
-          width: calc(100vw - 44px - 40px - 16px - 20px);
+          width: calc(375px - 44px - 40px - 16px - 20px);
         }
       }
       .icon {
@@ -53,37 +56,35 @@
   }
 
   .maxi-player {
-      min-height: 100vh;
-      min-height: -webkit-fill-available;
-      height: 100vh;
-      height: -webkit-fill-available;
-      max-height: 100vh;
-      max-height: -webkit-fill-available;
+      height: 812px;
+      width: 375px;
       overflow-y: hidden;
+      
     .maxi-player-top {
       padding-left: 20px;
       top: 0;
       left: 0;
       padding-right: 20px;
-      height: 100vh;
+      height: 812px;
       @include flex(column, flex-start, center);
       background-color: $white;
       .background-image {
         position: absolute;
         min-height: 320px;
         max-height: 320px;
-        // width: 100vw;
+        width: 375px;
+        // height: auto;
         overflow: hidden;
         @include flex(column, center, center);
         img {
-          height: 320px;
+          // height: 320px;
         }
       }
       .player-header {
         z-index: 10;
         @include flex(row, space-between, center);
         // width: calc(100vw - 48px);
-        width: 100vw;
+        width: 375px;
         padding-top: 40px;
         padding-bottom: 80px;
         padding-right: 48px;
@@ -114,8 +115,8 @@
       background-color: $black;
       padding: 28px 16px;
       position: absolute;
-      width: calc(100vw - 30px);
-      height: calc(100vh - 320px - 28px - 28px);
+      width: calc(375px - 30px);
+      height: calc(812px - 320px - 28px - 28px);
       left: 0;
       bottom: 0;
       z-index: 10;
@@ -124,7 +125,7 @@
       .player-info {
         padding: 0 32px;
         @include flex(column, center, center);
-        height: calc(100vh - 320px - 28px - 206px);
+        height: calc(812px - 320px - 28px - 206px);
 
         .info-detail {
           color: $blue;
@@ -182,7 +183,7 @@
         }
         .player-toggles {
           @include flex(row, space-between, center);
-          width: calc(100vw - 80px);
+          width: calc(375px - 80px);
           margin-top: 36px;
           .toggle-icon {
             width: 20px;
@@ -197,7 +198,7 @@
         .player-settings {
           @include flex(row, space-between, center);
           margin-top: 47px;
-          width: calc(100vw - 56px);
+          width: calc(375px - 56px);
 
           .timing {
             color: $white;
@@ -209,13 +210,13 @@
       position: absolute;
       left: 0;
       top: 0;
-      height: 100vh;
-      width: 100vw;
+      height: 812px;
+      width: 375px;
       z-index: 15;
 
       .player-speed-top {
-        height: 281px;
-        width: 100vw;
+        height: 220px;
+        // width: 375px;
         background-color: $blue;
         filter: blur(2px);
         -webkit-filter: blur(2px);
@@ -224,7 +225,7 @@
       }
       .player-speed-bottom {
         height: 536px;
-        width: calc(100vw - 56px);
+        width: calc(375px - 56px);
         background-color: $black;
         padding: 28px;
 
@@ -286,11 +287,11 @@
       z-index: 50;
       left: 0;
       top: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 375px;
+      height: 812px;
       // margin: 40vh auto;
       @include flex(column, center, center);
-      margin-top: -10vh;
+      // margin-top: -10vh;
       background: $black;
       background-color: rgba($color: $black, $alpha: 0.8);
 
@@ -298,13 +299,13 @@
         background-color: $white;
         border-radius: 4px;
         color: $black;
-        width: 70vw;
+        width: 300px;
         height: 25vh;
         // padding: ;
         @include flex(column, center, center);
         p {
           text-align: center;
-          width: 60vw;
+          width: 250px;
         }
         .back {
           text-decoration: underline;
