@@ -16,7 +16,11 @@
 
 This project is a recreation of the design mockups and wireframes as a preparation for the redesigned and reworked player for Berlingske Medias Weekendavisen. In the original Weekendavisen version, the user experiences a lot of bugs and a lack in some audio features. The main goal of this project is to test the flows and the designs for this rework.
 
+Link: [https://lydoplevelse.netlify.app/](https://lydoplevelse.netlify.app/)
+
 ### Flows
+
+Visual flows in Figma: [https://www.figma.com/file/yv8qhyZS5NcVL875YPOxHR/Berlingske-Media---Audio-player-flows?node-id=0%3A1](https://www.figma.com/file/yv8qhyZS5NcVL875YPOxHR/Berlingske-Media---Audio-player-flows?node-id=0%3A1)
 
 - Header - _component_
   - **Functionality** - open Home page
@@ -119,8 +123,8 @@ This project is a recreation of the design mockups and wireframes as a preparati
 - Drag and drop queue: multiple possible libraries and solutions have been tried out to provide the user with a possibility to change the order of the queue items with a drag and drop functionality. This currently isn't an available feature, but is being 'solved' with a pop-up modal that explains the functionality.
   Possibilities that have been tried:
 
-  - React DnD (HTML5Backend and TouchBackend)
-  - DnD Kit
+  - [React DnD (HTML5Backend and TouchBackend)](https://react-dnd.github.io/react-dnd/about)
+  - [DnD Kit](https://dndkit.com/)
   - Drag and Drop HTML
 
 - Toggle playing speed: doesn't affect the playing speed, this merely toggles the visual design
