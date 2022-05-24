@@ -11,10 +11,12 @@ const Navigation = ({ onToggleNavigation }) => {
                 <h1><Link to="/" onClick={ onToggleNavigation }>Bøger</Link></h1>
                 <h1><Link to="/" onClick={ onToggleNavigation }>Ideer</Link></h1>
             </div>
+
             <div className="nav-search">
                 <img src={ require("../assets/icons/search.svg").default } alt="" className="icon nav-icon" />
                 <p className="nav-search-label">Søg</p>
             </div>
+
             <div className="nav-links">
                 <div className="nav-link">
                     <img src={ require("../assets/icons/read_articles.svg").default } alt="" className="icon nav-icon" />
@@ -33,6 +35,7 @@ const Navigation = ({ onToggleNavigation }) => {
                     <p><Link to="/" onClick={ onToggleNavigation }>E-avis</Link></p>
                 </div>
             </div>
+            
             <div className="nav-links nav-cta">
                 <p className="nav-cta-item">Køb abonnement</p>
                 <p className="nav-cta-item">Kontakt</p>

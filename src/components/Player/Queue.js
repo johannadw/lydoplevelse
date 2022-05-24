@@ -43,17 +43,17 @@ const Queue = ({ queue, currentlyPlaying, isPlaying, setIsPlaying, removeFromQue
         <div className="queue-list">
             <QueueCurrent currentlyPlaying={ currentlyPlaying } isPlaying={ isPlaying } setIsPlaying={ setIsPlaying } /> 
             { queue.length === 0 
-                ? <div className="queue-list">
-                    <h2>Nothing in the queue yet</h2>
+                ?   <div className="queue-list">
+                        <h2>Nothing in the queue yet</h2>
                     </div>
-                : <div>
-                    <h2>Næste i lyttekøen</h2>
-                    {/* <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}> */}
+                :   <div>
+                        <h2>Næste i lyttekøen</h2>
+                        {/* <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}> */}
                         <QueueList queue={ queue } editQueue={ editQueue } removeFromQueue={ removeFromQueue } playFromQueue={ playFromQueue } setQueue={ setQueue } />
-                    {/* </DndProvider> */}
-                    {/* <DndProvider backend={HTML5Backend}>
-                        <QueueList queue={ queue } editQueue={ editQueue } removeFromQueue={ removeFromQueue } playFromQueue={ playFromQueue } setQueue={ setQueue } />
-                    </DndProvider> */}
+                        {/* </DndProvider> */}
+                        {/* <DndProvider backend={HTML5Backend}>
+                            <QueueList queue={ queue } editQueue={ editQueue } removeFromQueue={ removeFromQueue } playFromQueue={ playFromQueue } setQueue={ setQueue } />
+                        </DndProvider> */}
                     </div> }
         </div>
     

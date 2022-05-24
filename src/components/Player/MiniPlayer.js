@@ -9,27 +9,20 @@ const MiniPlayer = ({ onHidePlayer, isPlaying, onTogglePlaying, onTogglePlayerSi
         <div className="mini-player-progress-done"></div>
         <div className="mini-player-progress-todo"></div>
       </div>
+
       <div className="mini">
         <div className="mini-player-left">
           <img src={ require("../../assets/icons/close.svg").default } alt="" className='icon close-icon' onClick={ onHidePlayer }/>
           <div className="mini-player-content" onClick={ onTogglePlayerSize }>
-              <TextTruncate 
-                  line={2}
-                  element="p"
-                  truncateText="…"
-                  text={ currentlyPlaying.title }
-                  />
+              <TextTruncate line={2} element="p" truncateText="…" text={ currentlyPlaying.title } />
           </div>
         </div>
-        <div className="play-pause" onClick={ onTogglePlaying }>{ isPlaying 
-        // <div className="play-pause" >{ isPlaying 
-        // ? <img src={ require("../../assets/icons/pause_white.svg").default } alt=""  />
-        // ? <img src={ require("../../assets/icons/pause_white.svg").default } alt="" onClick={ () => { audio.pause();  } } />
-        ? <PauseIcon onClick={ () => ( audio.play() ) } color={ "white" } /> 
-          // : <img src={ require("../../assets/icons/pause_white.svg").default } alt=""  />
-          // : <img src={ require("../../assets/icons/pause_white.svg").default } alt="" onClick={ () => { audio.play(); } } />
-        : <PlayIcon /> 
-        }</div>
+
+        <div className="play-pause" onClick={ onTogglePlaying }>
+          { isPlaying 
+                ? <PauseIcon onClick={ () => ( audio.play() ) } color={ "white" } /> 
+                : <PlayIcon /> }
+        </div>
       </div>
     </div>
   )

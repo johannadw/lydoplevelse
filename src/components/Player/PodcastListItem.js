@@ -10,19 +10,14 @@ const PodcastListItem = ({ episode, addToQueue, onPlay, checkInQueue }) => {
             <div className="item-toggles">
               <img src={ require("../../assets/icons/play.svg").default } alt="" className="item-icon" onClick={ () => (onPlay(episode)) } />
               { checkInQueue(episode) 
-                ? <img src={ require("../../assets/icons/added_to_queue.svg").default } alt="" className="icon icon-listen-toggle" /> 
-                : <img src={ require("../../assets/icons/queue_add.svg").default } alt="" className="icon icon-listen-toggle" onClick={ () => ( addToQueue(episode) ) } /> 
-            } 
+                  ? <img src={ require("../../assets/icons/added_to_queue.svg").default } alt="" className="icon icon-listen-toggle" /> 
+                  : <img src={ require("../../assets/icons/queue_add.svg").default } alt="" className="icon icon-listen-toggle" onClick={ () => ( addToQueue(episode) ) } /> 
+              } 
             </div>
               <div className="item-info-about">
                   <p className="item-title">{ episode.title }</p>
                   <div className="item-content">
-                    <TextTruncate 
-                            line={2}
-                            element="p"
-                            truncateText="…"
-                            text={ episode.teaser }
-                            />
+                    <TextTruncate line={2} element="p" truncateText="…" text={ episode.teaser } />
                   </div>
                   <div className="item-details">
                       <p className="item-detail">{ episode.date }</p>

@@ -8,8 +8,9 @@ const Header = ({ navigation, setNavigation, profileNav, setProfileNav }) => {
     <header className={`header ${ navigation ? "menu-open" : ""} ${ profileNav ? "menu-open" : ""}`}>
       <div className={`header-top ${ navigation ? "header-fixed" : ""} ${ profileNav ? "header-fixed" : ""}`}>
         <Link to="/" onClick={ () => { setNavigation(false); setProfileNav(false) } }>
-        <img src={ require("../assets/logo/W_logo_big.svg").default } alt="" className="logo" />
+          <img src={ require("../assets/logo/W_logo_big.svg").default } alt="" className="logo" />
         </Link>
+        
         <div className="header-items">
           { !profileNav && <div className="header-item"  onClick={() => {setProfileNav(!profileNav); setNavigation(false)}}>
             <div className="header-icon">
@@ -37,6 +38,8 @@ const Header = ({ navigation, setNavigation, profileNav, setProfileNav }) => {
           </div> } 
         </div>
       </div>
+
+      {/* Opens navigation menu or profile navigation menu */}
       {navigation && <Navigation onToggleNavigation={ () => setNavigation(false) } /> }
       {profileNav && <ProfileNav  onToggleProfileNav={ () => setProfileNav(false)} /> }
     </header>

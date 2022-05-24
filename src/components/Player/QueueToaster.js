@@ -9,6 +9,7 @@ const QueueToaster = ({ onShowToaster, showPlayer }) => {
             <p>Lyd tilføjet til lyttekø</p>
             <img src={ require("../../assets/icons/close_black.svg").default } className="toaster-close-icon icon" alt="" onClick={ onShowToaster } />
           </div>
+          
           <div className="toaster-content-cta">
             <p onClick={ onShowToaster } >Fortryd</p>
             <p className="divider">I</p>

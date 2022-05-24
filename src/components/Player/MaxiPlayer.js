@@ -19,6 +19,7 @@ const MaxiPlayer = ({ onTogglePlaying, onTogglePlayerSize, currentlyPlaying, isP
             </div>
             <img src={ currentlyPlaying.image } className="background-image" alt="" style={{ height: "320px" }}/>
         </div>
+
         <div className="maxi-player-bottom">
             <div className="player-info">
                 { currentlyPlaying.podcast ? <p className="player-info-item info-detail">{ currentlyPlaying.podcast }</p> : '' }
@@ -26,12 +27,14 @@ const MaxiPlayer = ({ onTogglePlaying, onTogglePlayerSize, currentlyPlaying, isP
                 <h1 className="player-info-item info-title">{ currentlyPlaying.title }</h1>
                 <p className="player-info-item info-date">{ currentlyPlaying.date }</p>
             </div>
+
             <div className="player-audio">
                 <div className="progress">
                     <p className="played">2.52</p>
                     <div className="progress-bar"><div className="progress-bar-btn"></div></div>
                     <p className="time-left">-0.12</p>
                 </div>
+
                 <div className="player-toggles">
                     <img src={ require("../../assets/icons/backward.svg").default } alt="" className="icon backward-icon toggle-icon" onClick={ () => ( playPrev(currentlyPlaying) ) } />
                     <img src={ require("../../assets/icons/backward_seconds.svg").default } alt="" className="icon backward-seconds-icon toggle-icon" />
@@ -39,16 +42,17 @@ const MaxiPlayer = ({ onTogglePlaying, onTogglePlayerSize, currentlyPlaying, isP
                     <img src={ require("../../assets/icons/forward_seconds.svg").default } alt="" className="icon forward-seconds-icon toggle-icon" />
                     <img src={ require("../../assets/icons/forward.svg").default } alt="" className="icon forward-icon toggle-icon" onClick={ () => ( playNext(currentlyPlaying) ) } />
                 </div>
+
                 <div className="player-settings">
                     <img src={ require("../../assets/icons/devices.svg").default } alt="" className="icon device-icon settings-icon" onClick={ () => setShowSpeakerToaster(true)} />                   
-                    <p className="timing" onClick={ () => setShowPlayerSpeed(!showPlayerSpeed) } >{ currentSpeed ? currentSpeed.speed : "" }</p>
-                                        
+                    <p className="timing" onClick={ () => setShowPlayerSpeed(!showPlayerSpeed) } >{ currentSpeed ? currentSpeed.speed : "" }</p>                 
                     <Link to="ko" >
                         <img src={ require("../../assets/icons/queue.svg").default } alt="" className="icon queue-icon settings-icon" />
                     </Link>
                 </div>
             </div>
         </div>
+        
         { showSpeakerToaster ? <SpeakerToaster setShowSpeakerToaster={ setShowSpeakerToaster } /> : '' }
         { showPlayerSpeed && <PlayerSpeed onTogglePlayerSpeed={ () => setShowPlayerSpeed(!showPlayerSpeed) } playingSpeed={ playingSpeed } togglePlayingSpeed={ togglePlayingSpeed } currentImage={currentlyPlaying.image} /> }
     </div>
